@@ -8,13 +8,17 @@ import { useEffect, useState } from "react";
 export default function App() {
   const [todoList, settodoList] = useState([]);
 
-  const existingTodo = async () => {
-    const data = await fetch("http://localhost:3001/users");
-    const response = await data.json();
-    settodoList(response);
-  };
+ 
 
   useEffect(() => {
+   
+    const existingTodo = async () => {
+      const data = await fetch("http://localhost:3001/users");
+      const response = await data.json();
+      settodoList(response);
+    };
+
+    
     existingTodo();
   }, []);
 
@@ -23,7 +27,8 @@ export default function App() {
       id: uuidv4(),
       content: task,
     };
-    const response = await fetch("http://localhost:3001/uses", {
+
+    const response = await fetch("http://localhost:3001/users", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
