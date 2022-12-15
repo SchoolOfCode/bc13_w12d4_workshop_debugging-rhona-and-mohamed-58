@@ -16,14 +16,14 @@ function hasPets(hasPet, firstName, lastName) {
 }
 
 let myAccountNumbers = {
-  account1: "220",
+  account1: 220,
   account2: 144,
   account3: 12,
   account4: 1443,
 };
 
 function addsBalanceOfAccounts() {
-  let firstAccount = myAccountNumbers[1];
+  let firstAccount = myAccountNumbers["account2"];
   let secondAccount = myAccountNumbers["account3"];
   return firstAccount + secondAccount;
 }
@@ -31,23 +31,22 @@ function addsBalanceOfAccounts() {
 function calculator(firstNumber, operator, secondNumber) {
   if (operator === "+") {
     let answer = firstNumber + secondNumber;
-    return;
+    return answer;
   }
   if (operator === "-") {
     let answer = firstNumber - secondNumber;
-    return;
+    return answer;
   }
   if (operator === "*") {
     let answer = firstNumber * secondNumber;
-    return;
+    return answer;
   }
   if (operator === "/") {
     let answer = firstNumber / secondNumber;
-    return;
+    return answer;
   } else {
     let answer = "Invalid inputs. Try again!";
-    return;
-    answer;
+    return answer;
   }
 }
 
